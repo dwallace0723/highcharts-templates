@@ -1,3 +1,27 @@
+var gns_so_pp = _.map(_.filter(datasets.filter(function(d) {
+  return d.queryName == "Gross New Business - PoP";
+})[0].content, {
+  sales_owned: true
+}), 'gross_new_subscriptions_pp_rt');
+
+var gns_so_cp = _.map(_.filter(datasets.filter(function(d) {
+  return d.queryName == "Gross New Business - PoP";
+})[0].content, {
+  sales_owned: true
+}), 'gross_new_subscriptions_cp_rt');
+
+var gns_ss_pp = _.map(_.filter(datasets.filter(function(d) {
+  return d.queryName == "Gross New Business - PoP";
+})[0].content, {
+  sales_owned: false
+}), 'gross_new_subscriptions_pp_rt');
+
+var gns_ss_cp = _.map(_.filter(datasets.filter(function(d) {
+  return d.queryName == "Gross New Business - PoP";
+})[0].content, {
+  sales_owned: false
+}), 'gross_new_subscriptions_cp_rt');
+
 Highcharts.chart('gross-new-business-pop-container', {
 
   chart: {
